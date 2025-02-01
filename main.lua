@@ -2,10 +2,14 @@
 love = require("love")
 
 local Sprite = require("src.sprite")
+local Background = require("src.background")
 
 local sprite
+local background
 
 function love.load()
+  background = Background()
+  background:load()
   local assets = require("src.assets")
   sprite = Sprite(assets.img_fern)
   sprite:load()
@@ -17,6 +21,12 @@ function love.update(dt)
 end
 
 function love.draw()
+  background:draw()
   -- Draw the animation
   sprite:draw()
+end
+
+function love.resize(w, h)
+  -- 当窗口大小改变时重新创建背景
+  love.load()
 end

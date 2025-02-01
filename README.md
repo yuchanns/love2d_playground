@@ -9,5 +9,7 @@ make
 ## TODOs
 
 - [x] Animation
+- [x] Background canvas
+- [ ] Movement
 - [ ] Camera
 - [ ] Controller
